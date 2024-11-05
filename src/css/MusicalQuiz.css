@@ -1,0 +1,105 @@
+:root {
+    --primary-bg: #6764ec; 
+    --secondary-bg: #ffffff;
+    --primary-text: #000000; 
+    --secondary-text: #5f5e7a; 
+    --border-color: #f2edf5; 
+}
+
+/* Musical Quiz Page */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: -20px;
+    width: 100%;
+    align-items: center; /* Center horizontally */
+}
+
+.quiz-content {
+    max-width: 800px; 
+    width: 100%;
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    align-items: center; /* Center horizontally */
+    margin: 0 auto; /* Center the container */
+}
+
+.quiz-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.quiz-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.question h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.question ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.question li {
+    margin-bottom: 10px; 
+}
+
+.question input[type="radio"] {
+    display: none; 
+}
+
+.question label {
+    display: block; 
+    padding: 10px; 
+    background-color: var(--border-color);
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.question label:hover {
+    background-color: var(--primary-bg);
+}
+
+.question input[type="radio"]:checked + label {
+    background-color: var(--primary-bg);
+    color: white; 
+}
+
+.quiz-submit {
+    margin-top: 20px; 
+}
+
+.quiz-submit button {
+    padding: 10px 20px;
+    font-size: 16px; 
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+.quiz-submit button:hover {
+    background-color: var(--primary-bg);
+}
+
+/* Add this to your existing CSS */
+.selected {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}

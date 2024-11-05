@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './components/Header';
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import ArtistProfile from "./pages/ArtistProfile";
@@ -10,7 +11,8 @@ import NoPage from "./pages/NoPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Header /> {/* Place Header here to show it above Layout */}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

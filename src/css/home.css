@@ -1,0 +1,169 @@
+:root {
+    --primary-bg: #6764ec; 
+    --secondary-bg: #ffffff;
+    --primary-text: #000000; 
+    --secondary-text: #5f5e7a; 
+    --border-color: #f2edf5; 
+}
+
+
+/* Include your navigation styles here */
+
+.centered-heading {
+    text-align: center; /* Center text horizontally */
+    
+}
+
+/* Main page styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--secondary-bg);
+    color: var(--primary-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    text-align: left;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 40px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: var(--secondary-bg);
+    border-radius: 5px;
+}
+
+.latest-featured-artist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.featured-artist {
+    color:rgb(0, 0, 0);
+}
+
+.artist-placeholder {
+    width: 200px; 
+    height: 400px; 
+    background-color: var(--border-color);
+}
+
+.featured-artist-info {
+    flex: 1; 
+    padding: 20px;
+    text-align: center;
+    margin: 0 20px; 
+    height: 400px; 
+}
+
+.listeners-choice {
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.listeners-choice h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.choice-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice-form label {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.choice-form select,
+.choice-form button {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.choice-form button {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.choice-form button:hover {
+    background-color: var(--secondary-text);
+}
+
+.artists-image {
+    width: 200px; 
+    height: 400px; 
+    object-fit: cover; 
+}
+
+.small-text {
+    font-size: 6px; 
+    line-height: 1; 
+    margin-top: -6px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-bg);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-home, .icon-arrow {
+    font-size: 24px;
+}
+
+/* Additional content styles */
+.additional-content {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.additional-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.additional-content ul {
+    list-style: disc;
+    margin-left: 20px;
+}
