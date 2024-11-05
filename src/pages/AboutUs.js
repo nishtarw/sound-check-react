@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../css/AboutUs.css'; // Include your specific CSS for the About Us page
+import '../css/AboutUs.css'; // 
 
 
 
 const AboutUs = () => {
-    // State to manage the visibility of the FAQ answers
+    // the visibility of the FAQ answers
     const [faqVisibility, setFaqVisibility] = useState({});
 
     const toggleAnswer = (index) => {

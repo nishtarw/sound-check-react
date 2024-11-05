@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/SongJournal.css'; // Optional: Keep or remove this line
+import '../css/SongJournal.css'; 
 
 const SongCard = ({ song, openModal }) => {
     return (

@@ -1,7 +1,7 @@
 // SongJournal.js
 import React from 'react';
-import SongCard from '../components/SongCard'; // Importing the SongCard component
-import '../css/SongJournal.css'; // Optional: Import CSS for styling
+import SongCard from '../components/SongCard';
+import '../css/SongJournal.css'; 
 import theweekndImage from '../images/theweeknd3.jpg';
 import szaImage from '../images/sza.jpg';
 import casImage from '../images/cas.jpg';

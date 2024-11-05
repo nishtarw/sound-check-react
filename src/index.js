@@ -12,7 +12,7 @@ import NoPage from "./pages/NoPage";
 export default function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Header /> {/* Place Header here to show it above Layout */}
+      <Header /> {}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

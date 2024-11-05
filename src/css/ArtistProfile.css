@@ -62,5 +62,72 @@
     cursor: pointer;
 }
 
+.image-credit{
+    font-size: 0.8rem;
+}
 
 
+/* Artist Info Page Responsive */
+.artist-info-details, .discography-events {
+    flex-direction: column;
+}
+
+.artist-info-details div, .discography-events div {
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+@media (max-width: 768px) {
+.latest-featured-artist {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px; 
+}
+
+.featured-artist-info {
+    max-width: 90%; 
+    padding: 0 15px; 
+    text-align: center; 
+    font-size: 16px; 
+    line-height: 1.5; 
+}
+
+.artist-placeholder {
+    width: 100%; 
+    max-width: 300px; 
+}
+
+.artists-image {
+    width: 100%; 
+    height: auto; 
+}
+
+h3 {
+    font-size: 1.5em; 
+    margin-bottom: 10px; 
+}
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 20px;
+    }
+
+    .artist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .artist-card {
+        margin: 5px;
+    }
+
+    .nav-arrows {
+        flex-direction: column;
+    }
+
+    .nav-arrows button {
+        margin: 5px 0;
+        width: 100%;
+    }
+}
+}

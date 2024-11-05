@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import '../css/ArtistProfile.css';
 
 const ArtistCard = ({ artist }) => {
-    const [visibleSection, setVisibleSection] = useState('bio'); // Default to biography
-    const [isVisible, setIsVisible] = useState(false); // State to control visibility
+    const [visibleSection, setVisibleSection] = useState('bio'); 
+    const [isVisible, setIsVisible] = useState(false); 
 
     const navigate = (direction) => {
         const sections = ['bio', 'discography', 'events'];
@@ -13,7 +13,7 @@ const ArtistCard = ({ artist }) => {
     };
 
     const toggleVisibility = () => {
-        setIsVisible(!isVisible); // Toggle visibility state
+        setIsVisible(!isVisible);
     };
 
     return (
@@ -52,7 +52,7 @@ const ArtistCard = ({ artist }) => {
                                     <p>{artist.upcomingEvents}</p>
                                 </>
                             )}
-                            {/* Navigation Arrows, only shown when isVisible is true */}
+                            {}
                             <div className="nav-arrows">
                                 <button onClick={() => navigate(-1)}>← Previous</button>
                                 <button onClick={() => navigate(1)}>Next →</button>

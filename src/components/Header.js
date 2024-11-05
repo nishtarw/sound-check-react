@@ -1,6 +1,6 @@
 // src/components/Header.js
 import React from 'react';
-import '../css/home.css'; // Create a CSS file for header styles if needed
+import '../css/home.css'; 
 
 const Header = () => {
   return (
