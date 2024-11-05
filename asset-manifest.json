@@ -1,10 +1,25 @@
 {
   "files": {
-    "main.js": "/sound-check-react/static/js/main.236e8299.js",
+    "main.css": "/sound-check-react/static/css/main.709e46b3.css",
+    "main.js": "/sound-check-react/static/js/main.06f27a07.js",
+    "static/media/travis.jpg": "/sound-check-react/static/media/travis.c5bf0c785fef97d7f347.jpg",
+    "static/media/cas.jpg": "/sound-check-react/static/media/cas.09ba3c0b3a64039e000f.jpg",
+    "static/media/theweeknd.jpg": "/sound-check-react/static/media/theweeknd.57d7d547237ef60e40cc.jpg",
+    "static/media/kali.jpg": "/sound-check-react/static/media/kali.8f1799cd44b999bb386a.jpg",
+    "static/media/frank.jpg": "/sound-check-react/static/media/frank.60a8940af5d976c18259.jpg",
+    "static/media/sza.jpg": "/sound-check-react/static/media/sza.3800569ac214a299746e.jpg",
+    "static/media/lana.jpg": "/sound-check-react/static/media/lana.1335d1dd7f5ce74f183b.jpg",
+    "static/media/childishgambino.jpg": "/sound-check-react/static/media/childishgambino.25f3f79eb3e876fe9691.jpg",
+    "static/media/theweeknd2.jpeg": "/sound-check-react/static/media/theweeknd2.ef5952e4151afbc826ac.jpeg",
+    "static/media/steve.jpg": "/sound-check-react/static/media/steve.c9bd310dfbc956866edf.jpg",
+    "static/media/marias.jpg": "/sound-check-react/static/media/marias.c5598c545b6358134b38.jpg",
+    "static/media/theweeknd3.jpg": "/sound-check-react/static/media/theweeknd3.2ba05e6bf85cd0ab29f6.jpg",
     "index.html": "/sound-check-react/index.html",
-    "main.236e8299.js.map": "/sound-check-react/static/js/main.236e8299.js.map"
+    "main.709e46b3.css.map": "/sound-check-react/static/css/main.709e46b3.css.map",
+    "main.06f27a07.js.map": "/sound-check-react/static/js/main.06f27a07.js.map"
   },
   "entrypoints": [
-    "static/js/main.236e8299.js"
+    "static/css/main.709e46b3.css",
+    "static/js/main.06f27a07.js"
   ]
 }
