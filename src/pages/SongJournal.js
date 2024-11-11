@@ -10,7 +10,7 @@ const SongJournal = () => {
         // Fetch songs data from the server
         const fetchSongs = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/songs'); // Fetch from the backend
+                const response = await fetch('https://sound-check-server.onrender.com'); // Fetch from the backend
                 const data = await response.json(); // Parse the JSON response
                 setSongs(data); // Set the fetched data to state
             } catch (error) {

@@ -4,7 +4,7 @@ import '../css/SongJournal.css';
 const SongCard = ({ song, openModal }) => {
     return (
         <div className="review-card">
-            <img src={`http://localhost:5000${song.image}`} alt={`${song.title} - ${song.artist}`} className="song-image" />
+            <img src={`https://sound-check-server.onrender.com${song.image}`} alt={`${song.title} - ${song.artist}`} className="song-image" />
 
             
             <p className="small-text">Originally reviewed on Nov 12, 2018. Licensed under CC BY 2.0.</p>

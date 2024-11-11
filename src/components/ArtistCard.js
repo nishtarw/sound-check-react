@@ -18,7 +18,7 @@ const ArtistCard = ({ artist }) => {
 
     return (
         <div className="artist-card">
-           <img src={`http://localhost:5000${artist.image}`} alt={artist.name} className="artist-image" />
+           <img src={`https://sound-check-server.onrender.com${artist.image}`} alt={artist.name} className="artist-image" />
             <div className="artist-info">
                 <h2 className="artist-name">{artist.name}</h2>
                 <p className="artist-genre"><strong>Genre:</strong> {artist.genre}</p>
