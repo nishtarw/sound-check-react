@@ -1,12 +1,27 @@
+import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
-import '../css/layout.css'; // Ensure this path is correct
+import '../css/layout.css';
 
 const Layout = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen((prevState) => !prevState);
+  };
+
   return (
     <>
-      <div className="nav-container"> {/* This div is important for styling */}
+      <div className="nav-container">
+        {/* Hamburger Icon (only visible on small screens) */}
+        <div className="hamburger" onClick={toggleNav}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        {/* Main Navigation Menu */}
         <nav>
-          <ul>
+          <ul className={`nav-links ${isNavOpen ? "active" : ""}`}>
             <li>
               <Link to="/">Home</Link>
             </li>

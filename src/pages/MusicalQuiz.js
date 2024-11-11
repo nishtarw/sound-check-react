@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/MusicalQuiz.css'; // Include your specific CSS for the quiz page
+import '../css/MusicalQuiz.css'; 
 
 const MusicalQuiz = () => {
     const [responses, setResponses] = useState({
