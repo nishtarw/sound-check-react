@@ -10,6 +10,10 @@ const Home = () => {
   return (
     <div>
     
+    {/* Authentication Links Section */}
+    <section className="auth-links">
+          <a href="#">Log in</a>
+        </section>
       
       {/* Main Content */}
       <main>

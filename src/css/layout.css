@@ -45,22 +45,7 @@ nav a:hover {
     color: var(--primary-bg); 
 }
 
-/* Hamburger icon */
-.hamburger {
-    display: none; /* Hide by default */
-    flex-direction: column;
-    cursor: pointer;
-    margin: 10px auto;
-    justify-content: center;
-}
 
-.hamburger div {
-    width: 30px;
-    height: 3px;
-    background-color: var(--primary-text);
-    margin: 4px 0;
-    transition: 0.3s;
-}
 
 /* Nav links for small screens */
 .nav-links {
@@ -80,9 +65,28 @@ nav a:hover {
 /* Nav for smaller screens */
 @media (max-width: 768px) {
     /* Show hamburger icon */
-    .hamburger {
-        display: flex; /* Show hamburger */
-    }
+  
+
+
+/* Hamburger icon itself */
+ /* Hamburger icon */
+ .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center; /* Center the icon inside */
+    margin: 0; /* Remove margin */
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-text);
+    justify-content: center;
+    margin: 4px 0;
+    transition: 0.3s;
+}
 
     /* Hide nav links by default on small screens */
     .nav-links {

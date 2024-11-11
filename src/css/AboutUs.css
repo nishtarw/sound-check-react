@@ -5,17 +5,18 @@
     --secondary-text: #5f5e7a; 
     --border-color: #f2edf5; 
 }
+
 /* About Us Page */
-.heading{
+.heading {
     text-align: center;
     padding-top: 50px;
-    
 }
+
 .about-us-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
+    padding: 0;
     margin-top: -50px; 
     width: 100%;
 }
@@ -29,6 +30,7 @@
     margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
+    box-sizing: border-box; /* Ensure padding does not cause overflow */
 }
 
 .about-us-section h2 {
@@ -64,7 +66,6 @@
     border-radius: 8px;
 }
 
-/* Header for the Contact Form */
 .contact-header {
     text-align: center; /* Centers the header */
     font-size: 24px; /* Adjusts the font size */
@@ -95,7 +96,7 @@ textarea {
 
 /* Submit Button */
 button[type="submit"] {
-    background-color: var(--button-bg);
+    background-color: var(--primary-bg);
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
@@ -113,3 +114,99 @@ button[type="submit"]:hover {
     margin-top: 10px;
     font-weight: bold;
 }
+
+/* Media Query for smaller screens (Mobile) */
+@media (max-width: 768px) {
+    /* Ensure no horizontal overflow */
+    body {
+        overflow-x: hidden;
+    }
+
+    .about-us-section {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .about-us-container {
+        padding: 0 10px;
+    }
+
+    .about-us-section h2 {
+        font-size: 24px;
+    }
+
+    .about-us-section p {
+        font-size: 16px;
+    }
+
+    #contact-form {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .contact-header {
+        font-size: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 8px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Media Query for very small screens (Mobile Portrait) */
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+
+    .about-us-section {
+        padding: 10px;
+    }
+
+    .about-us-section h2 {
+        font-size: 20px;
+    }
+
+    .about-us-section p {
+        font-size: 14px;
+    }
+
+    #contact-form {
+        padding: 10px;
+    }
+
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 6px;
+}
+
+button[type="submit"] {
+    font-size: 12px;
+    padding: 6px 10px;
+}
+
+
+    .contact-header {
+        font-size: 18px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 6px;
+    }
+
+    button[type="submit"] {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
