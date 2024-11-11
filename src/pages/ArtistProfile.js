@@ -3,24 +3,24 @@ import ArtistCard from '../components/ArtistCard';
 
 const ArtistProfile = () => {
   const [artistData, setArtistData] = useState([]);
-  const [loading, setLoading] = useState(true);  // To show loading state while fetching
+  const [loading, setLoading] = useState(true);  
 
   useEffect(() => {
-    // Fetch data from your server
-    fetch('http://localhost:5000/api/artists')  // Replace with your actual API endpoint
-      .then(response => response.json())  // Parse the response to JSON
+    
+    fetch('https://sound-check-server.onrender.com')  
+      .then(response => response.json())  
       .then(data => {
-        setArtistData(data);  // Set the data from the server
-        setLoading(false);  // Hide loading indicator after data is fetched
+        setArtistData(data);  
+        setLoading(false);  
       })
       .catch(error => {
         console.error('Error fetching artist data:', error);
-        setLoading(false);  // Hide loading in case of error
+        setLoading(false);  
       });
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;  // Display loading message until data is fetched
+    return <div>Loading...</div>; 
   }
 
   return (

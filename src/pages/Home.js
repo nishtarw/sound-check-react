@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
     
-    {/* Authentication Links Section */}
+    {/* log in*/}
     <section className="auth-links">
           <a href="#">Log in</a>
         </section>
