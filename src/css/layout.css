@@ -47,13 +47,13 @@ nav a:hover {
 
 
 
-/* Nav links for small screens */
+
 .nav-links {
     display: flex;
     justify-content: center;
 }
 
-/* Show navigation links when 'active' class is added */
+
 .nav-links.active {
     display: flex;
 }
@@ -68,15 +68,15 @@ nav a:hover {
   
 
 
-/* Hamburger icon itself */
+
  /* Hamburger icon */
  .hamburger {
     display: flex;
     flex-direction: column;
     cursor: pointer;
     justify-content: center;
-    align-items: center; /* Center the icon inside */
-    margin: 0; /* Remove margin */
+    align-items: center; 
+    margin: 0; 
 }
 
 .hamburger div {
@@ -88,16 +88,16 @@ nav a:hover {
     transition: 0.3s;
 }
 
-    /* Hide nav links by default on small screens */
+    
     .nav-links {
-        display: none; /* Hidden by default */
+        display: none; 
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
 
     .nav-links.active {
-        display: flex; /* Show when 'active' class is added */
+        display: flex; 
     }
 
     nav li {

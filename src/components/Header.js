@@ -8,11 +8,9 @@ const Header = () => {
       <div className="logo-and-title">
         <h1>The Sound Check</h1>
       </div>
-      <div className="hamburger" id="hamburger">
         <div></div>
         <div></div>
         <div></div>
-      </div>
     </header>
   );
 };

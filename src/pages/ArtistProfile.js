@@ -7,7 +7,7 @@ const ArtistProfile = () => {
 
   useEffect(() => {
     
-    fetch('https://sound-check-server.onrender.com')  
+    fetch('https://sound-check-server.onrender.com/api/artists')  
       .then(response => response.json())  
       .then(data => {
         setArtistData(data);  
