@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/SongJournal.css';
 
-const SongCard = ({ song }) => {
+const SongCard = ({ song, openEditDialog, openDeleteDialog }) => {
   return (
     <div className="review-card">
       <img 
@@ -18,6 +18,12 @@ const SongCard = ({ song }) => {
       <div className="review-content">
         <h3>My Review</h3>
         <p>{song.review}</p>
+      </div>
+
+      {/* Edit and Delete buttons */}
+      <div className="song-actions">
+        <button onClick={() => openEditDialog(song)}>Edit</button>
+        <button onClick={() => openDeleteDialog(song)}>Delete</button>
       </div>
     </div>
   );
