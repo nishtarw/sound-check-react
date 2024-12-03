@@ -25,7 +25,7 @@ const ArtistProfile = () => {
 
   return (
     <div className="artist-profiles">
-      <h1 className="centered-heading">Artist Profil</h1>
+      <h1 className="centered-heading">Artist Profile</h1>
       <div className="artist-grid">
         {artistData.map((artist) => (
           <ArtistCard key={artist._id} artist={artist} />
