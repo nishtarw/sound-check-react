@@ -14,7 +14,7 @@ const DeleteDialog = (props) => {
 
       if (response.ok) {
         setResult("Review successfully deleted.");
-        props.removeReview(props._id); // Call the parent method to remove review
+        props.removeReview(props._id); 
         props.closeDialog();
       } else {
         const errorData = await response.json();
