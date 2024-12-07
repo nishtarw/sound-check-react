@@ -3,38 +3,28 @@ import React, { useState } from "react";
 const EditDialog = (props) => {
   const [inputs, setInputs] = useState({
     _id: props._id,
-    songName: props.songName,
-    artistName: props.artistName,
-    reviewText: props.reviewText,
-    prev_img: props.img,
+    title: props.title,
+    artist: props.artist,
+    review: props.review,
+    image: props.image,
   });
-  const [result, setResult] = useState("");
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setInputs((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInputs((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleImageChange = (event) => {
-    const { name, files } = event.target;
-    setInputs((prevState) => ({
-      ...prevState,
-      [name]: files[0], 
-    }));
-  };
-
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending...");
-
+  const onSubmit = async (e) => {
+    e.preventDefault();
     const formData = new FormData();
-    formData.append("title", inputs.songName);
-    formData.append("artist", inputs.artistName);
-    formData.append("review", inputs.reviewText);
-    if (inputs.img) formData.append("image", inputs.img);
+    formData.append("title", inputs.title);
+    formData.append("artist", inputs.artist);
+    formData.append("review", inputs.review);
+    if (inputs.image) {
+      formData.append("image", inputs.image);
+    }
+
+    console.log("Editing song with ID:", inputs._id);  // Debugging line
 
     try {
       const response = await fetch(
@@ -44,19 +34,15 @@ const EditDialog = (props) => {
           body: formData,
         }
       );
-
+      const data = await response.json();
       if (response.ok) {
-        const updatedReview = await response.json();
-        setResult("Review successfully updated.");
-        props.updateReview(updatedReview.updatedSong); // Update the song review in the parent component
-        props.closeDialog(); // Close the dialog
+        props.onReviewUpdated(data.updatedSong);
       } else {
-        const errorData = await response.json();
-        setResult("Failed to update review: " + (errorData.message || "Unknown error."));
+        alert("Error editing review: " + data.message);
       }
     } catch (error) {
-      console.error("Error updating review:", error);
-      setResult("An error occurred while updating the review.");
+      console.error("Error editing review:", error);
+      alert("An error occurred while editing the review.");
     }
   };
 
@@ -71,65 +57,37 @@ const EditDialog = (props) => {
           >
             &times;
           </span>
-          <form id="edit-review-form" onSubmit={onSubmit}>
-            <p>
-              <label htmlFor="songName">Song Name:</label>
+          <div id="edit-content">
+            <h3>Edit Review for {inputs.title}</h3>
+            <form onSubmit={onSubmit}>
               <input
                 type="text"
-                id="songName"
-                name="songName" 
-                value={inputs.songName}
+                name="title"
+                value={inputs.title}
                 onChange={handleChange}
-                required
+                placeholder="Song Title"
               />
-            </p>
-            <p>
-              <label htmlFor="artistName">Artist Name:</label>
               <input
                 type="text"
-                id="artistName"
-                name="artistName" 
-                value={inputs.artistName}
+                name="artist"
+                value={inputs.artist}
                 onChange={handleChange}
-                required
+                placeholder="Artist"
               />
-            </p>
-            <p>
-              <label htmlFor="reviewText">Review Text:</label>
               <textarea
-                id="reviewText"
-                name="reviewText" 
-                value={inputs.reviewText}
+                name="review"
+                value={inputs.review}
                 onChange={handleChange}
-                required
+                placeholder="Review"
               />
-            </p>
-
-            <section className="columns">
-              <p id="img-prev-section">
-                <img
-                  id="img-prev"
-                  src={inputs.img ? URL.createObjectURL(inputs.img) : inputs.prev_img}
-                  alt=""
-                />
-              </p>
-              <p id="img-upload">
-                <label htmlFor="image">Upload Image:</label>
-                <input
-                  type="file"
-                  id="image"
-                  name="img" 
-                  onChange={handleImageChange}
-                  accept="image/*"
-                />
-              </p>
-            </section>
-
-            <p>
-              <button type="submit">Submit</button>
-            </p>
-            <p>{result}</p>
-          </form>
+              <input
+                type="file"
+                name="image"
+                onChange={(e) => setInputs({ ...inputs, image: e.target.files[0] })}
+              />
+              <button type="submit">Update</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
