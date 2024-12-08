@@ -59,14 +59,14 @@ const SongJournal = () => {
   const updateReview = (updatedReview) => {
     setSongs((prevSongs) =>
       prevSongs.map((song) =>
-        song.id === updatedReview.id ? updatedReview : song
+        song._id === updatedReview._id ? updatedReview : song
       )
     );
   };
 
   // Remove the song after it's deleted
   const removeReview = (songId) => {
-    setSongs((prevSongs) => prevSongs.filter((song) => song.id !== songId)); // Remove the review from state
+    setSongs((prevSongs) => prevSongs.filter((song) => song._id !== songId)); // Remove the review from state
   };
 
   return (
@@ -78,7 +78,7 @@ const SongJournal = () => {
       <section className="song-reviews">
         {songs.map((song) => (
           <SongCard
-            key={song.id}
+            key={song._id} // Changed from song.id to song._id
             song={song}
             openEditDialog={openEditDialog}
             openDeleteDialog={openDeleteDialog}
@@ -93,7 +93,7 @@ const SongJournal = () => {
       {isEditDialogOpen && songToEdit && (
         <EditDialog
           closeDialog={closeEditDialog}
-          _id={songToEdit.id}
+          _id={songToEdit._id} // Changed from songToEdit.id to songToEdit._id
           songName={songToEdit.title}
           artistName={songToEdit.artist}
           reviewText={songToEdit.review}
@@ -106,7 +106,7 @@ const SongJournal = () => {
       {isDeleteDialogOpen && songToDelete && (
         <DeleteDialog
           closeDialog={closeDeleteDialog}
-          _id={songToDelete.id}
+          _id={songToDelete._id} // Changed from songToDelete.id to songToDelete._id
           songName={songToDelete.title}
           artistName={songToDelete.artist}
           removeReview={removeReview}
