@@ -29,7 +29,14 @@ const SongJournal = () => {
   }, []);
 
   const handleAddReview = (newReview) => {
-    setSongs((prevSongs) => [...prevSongs, newReview]); // Add the new review to the state
+    // Validate newReview object
+    if (!newReview || !newReview._id || !newReview.title || !newReview.artist) {
+      console.error("Invalid review object:", newReview);
+      return;
+    }
+    
+    // If the new review is valid, add it to the songs state
+    setSongs((prevSongs) => [...prevSongs, newReview]);
   };
 
   const openModal = () => setIsModalOpen(true);
