@@ -34,10 +34,11 @@ const SongJournal = () => {
       console.error("Invalid review object:", newReview);
       return;
     }
-
+  
     // Add the new review to the state immediately after submission
     setSongs((prevSongs) => [...prevSongs, newReview]);
   };
+  
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
