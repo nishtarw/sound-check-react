@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/sound-check-react/static/css/main.1c77024c.css",
-    "main.js": "/sound-check-react/static/js/main.f23a8711.js",
+    "main.js": "/sound-check-react/static/js/main.381b5426.js",
     "static/media/theweeknd.jpg": "/sound-check-react/static/media/theweeknd.57d7d547237ef60e40cc.jpg",
     "static/media/theweeknd2.jpeg": "/sound-check-react/static/media/theweeknd2.ef5952e4151afbc826ac.jpeg",
     "index.html": "/sound-check-react/index.html",
     "main.1c77024c.css.map": "/sound-check-react/static/css/main.1c77024c.css.map",
-    "main.f23a8711.js.map": "/sound-check-react/static/js/main.f23a8711.js.map"
+    "main.381b5426.js.map": "/sound-check-react/static/js/main.381b5426.js.map"
   },
   "entrypoints": [
     "static/css/main.1c77024c.css",
-    "static/js/main.f23a8711.js"
+    "static/js/main.381b5426.js"
   ]
 }
