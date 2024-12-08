@@ -21,7 +21,7 @@ const AddDialog = (props) => {
     const { name, files } = event.target;
     setInputs((prevState) => ({
       ...prevState,
-      [name]: files[0], // Save the uploaded file
+      [name]: files[0], 
     }));
   };
 
@@ -29,11 +29,12 @@ const AddDialog = (props) => {
     event.preventDefault();
     setResult("Sending...");
 
+    
     const formData = new FormData();
-    formData.append("title", inputs.songName); // Match backend naming
-    formData.append("artist", inputs.artistName); // Match backend naming
-    formData.append("review", inputs.reviewText); // Match backend naming
-    if (inputs.img) formData.append("image", inputs.img); // Optional image upload
+    formData.append("title", inputs.songName); 
+    formData.append("artist", inputs.artistName); 
+    formData.append("review", inputs.reviewText); 
+    if (inputs.img) formData.append("image", inputs.img); 
 
     try {
       const response = await fetch("https://sound-check-server.onrender.com/api/songs", {
@@ -41,16 +42,14 @@ const AddDialog = (props) => {
         body: formData,
       });
 
-      const data = await response.json();
+      const data = await response.json(); 
 
+      
       if (response.ok) {
-        // Ensure proper field mapping
-        const newSongReview = { ...data.newSongReview, id: data.newSongReview._id };
-
         setResult("Review Successfully Added");
-        event.target.reset(); // Reset form inputs
-        props.addReview(newSongReview); // Pass updated review to parent
-        props.closeDialog(); // Close the dialog
+        event.target.reset(); 
+        props.addReview(data.newSongReview); 
+        props.closeDialog();
       } else {
         setResult("Failed to add review: " + (data.message || "Unknown error"));
       }
@@ -77,7 +76,7 @@ const AddDialog = (props) => {
               <input
                 type="text"
                 id="songName"
-                name="songName"
+                name="songName" 
                 value={inputs.songName}
                 onChange={handleChange}
                 required
@@ -88,7 +87,7 @@ const AddDialog = (props) => {
               <input
                 type="text"
                 id="artistName"
-                name="artistName"
+                name="artistName" 
                 value={inputs.artistName}
                 onChange={handleChange}
                 required
@@ -98,7 +97,7 @@ const AddDialog = (props) => {
               <label htmlFor="reviewText">Review Text:</label>
               <textarea
                 id="reviewText"
-                name="reviewText"
+                name="reviewText" 
                 value={inputs.reviewText}
                 onChange={handleChange}
                 required
@@ -110,7 +109,7 @@ const AddDialog = (props) => {
                 <img
                   id="img-prev"
                   src={inputs.img ? URL.createObjectURL(inputs.img) : ""}
-                  alt={inputs.img ? "Preview of uploaded image" : "No image uploaded"}
+                  alt=""
                 />
               </p>
               <p id="img-upload">
@@ -118,7 +117,7 @@ const AddDialog = (props) => {
                 <input
                   type="file"
                   id="image"
-                  name="img"
+                  name="img" 
                   onChange={handleImageChange}
                   accept="image/*"
                 />
