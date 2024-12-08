@@ -29,7 +29,6 @@ const AddDialog = (props) => {
     event.preventDefault();
     setResult("Sending...");
 
-    
     const formData = new FormData();
     formData.append("title", inputs.songName); 
     formData.append("artist", inputs.artistName); 
@@ -44,7 +43,6 @@ const AddDialog = (props) => {
 
       const data = await response.json(); 
 
-      
       if (response.ok) {
         setResult("Review Successfully Added");
         event.target.reset(); 
