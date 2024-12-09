@@ -6,7 +6,7 @@ const EditDialog = (props) => {
     songName: props.songName,
     artistName: props.artistName,
     reviewText: props.reviewText,
-    prev_img: props.img,
+    prev_img: props.img,  // Image passed from parent (backend)
   });
   const [result, setResult] = useState("");
 
@@ -22,7 +22,7 @@ const EditDialog = (props) => {
     const { name, files } = event.target;
     setInputs((prevState) => ({
       ...prevState,
-      [name]: files[0], 
+      [name]: files[0], // Store the selected image file in state
     }));
   };
 
@@ -34,7 +34,7 @@ const EditDialog = (props) => {
     formData.append("title", inputs.songName);
     formData.append("artist", inputs.artistName);
     formData.append("review", inputs.reviewText);
-    if (inputs.img) formData.append("image", inputs.img);
+    if (inputs.img) formData.append("image", inputs.img); // Add new image if selected
 
     try {
       const response = await fetch(
@@ -77,7 +77,7 @@ const EditDialog = (props) => {
               <input
                 type="text"
                 id="songName"
-                name="songName" 
+                name="songName"
                 value={inputs.songName}
                 onChange={handleChange}
                 required
@@ -88,7 +88,7 @@ const EditDialog = (props) => {
               <input
                 type="text"
                 id="artistName"
-                name="artistName" 
+                name="artistName"
                 value={inputs.artistName}
                 onChange={handleChange}
                 required
@@ -98,7 +98,7 @@ const EditDialog = (props) => {
               <label htmlFor="reviewText">Review Text:</label>
               <textarea
                 id="reviewText"
-                name="reviewText" 
+                name="reviewText"
                 value={inputs.reviewText}
                 onChange={handleChange}
                 required
@@ -107,10 +107,11 @@ const EditDialog = (props) => {
 
             <section className="columns">
               <p id="img-prev-section">
+                {/* Image preview */}
                 <img
                   id="img-prev"
-                  src={inputs.img ? URL.createObjectURL(inputs.img) : inputs.prev_img}
-                  alt=""
+                  src={inputs.img ? URL.createObjectURL(inputs.img) : inputs.prev_img || "/path/to/default/image.jpg"} // Display previous image or fallback
+                  alt="Preview"
                 />
               </p>
               <p id="img-upload">
@@ -118,7 +119,7 @@ const EditDialog = (props) => {
                 <input
                   type="file"
                   id="image"
-                  name="img" 
+                  name="img"
                   onChange={handleImageChange}
                   accept="image/*"
                 />
